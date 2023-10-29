@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: about <about@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 16:59:54 by about             #+#    #+#             */
-/*   Updated: 2023/10/26 22:42:56 by about            ###   ########.fr       */
+/*   Created: 2023/10/25 18:34:43 by about             #+#    #+#             */
+/*   Updated: 2023/10/28 23:17:50 by about            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<iostream>
-#include<cctype>
+#pragma once
 
-int main(int ac, char **av)
+#include <string>
+#include <iostream>
+#include <cctype>
+#include <iomanip>
+#include <iterator>
+#include "contact.hpp"
+
+class PhoneBook
 {
-
-    if(ac == 1)
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-    else
-    {
-        for(int i = 1; i < ac; i++)
-        {
-            for(int j = 0; av[i][j]; j++)
-                std::cout << (char)toupper(av[i][j]);
-
-        }
-    std::cout << std::endl;
-    }
-}
+    public :
+       Contact contact[8];
+    public :   
+        int setthings(int , int);
+        std::string getthings(int , int);
+};
