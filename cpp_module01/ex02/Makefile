@@ -1,0 +1,25 @@
+NAME = program
+
+FLAGS =  -Wall -Wextra -Werror -std=c++98
+
+RM		= rm -rf
+
+SRC		= main.cpp
+
+OBJS	= $(SRC:.cpp=.o)
+
+all : $(NAME)
+
+$(NAME) :	$(OBJS)
+			c++ $(FLAGS) $(OBJS) -o $(NAME)
+
+
+clean:
+	$(RM) $(OBJS)
+
+fclean: clean
+	$(RM) $(NAME)
+
+re : fclean $(NAME)
+
+.PHONY: al clean fclean re
