@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: about <about@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:13:12 by about             #+#    #+#             */
-/*   Updated: 2023/10/31 16:20:14 by about            ###   ########.fr       */
+/*   Updated: 2023/11/05 19:05:12 by about            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
     std::string theString = "HI THIS IS BRAIN";
     std::string *stringPTR = &theString;
-    std::string stringREF = theString;
+    std::string &stringREF = theString;
 
     //printing memory
     std::cout << "• The memory address of the string variable: " << &theString << std::endl;
