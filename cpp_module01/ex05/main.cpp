@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: about <about@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 23:12:14 by about             #+#    #+#             */
-/*   Updated: 2023/10/29 15:48:08 by about            ###   ########.fr       */
+/*   Created: 2023/11/08 19:27:31 by about             #+#    #+#             */
+/*   Updated: 2023/11/08 19:29:43 by about            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include"Harl.hpp"
 
-#include<iostream>
-
-class Contact
+int main()
 {
-    private :
-        std::string first_name;
-        std::string last_name;
-        std::string nickname;
-        std::string phone_number;
-        std::string darkest_secret;
-    public :
-        void SetName(std::string , std::string);
-        std::string GetName(int);
-        void   displayContact(Contact& contact);
-};
+    Harl harl;
 
-void    Contact::SetName();
+    harl.complain("DEBUG");
+    // harl.complain("INFO");
+    // harl.complain("WARNING");
+    // harl.complain("ERROR");
+    // harl.complain("UNKNOWN");
+
+    return (0);
+}

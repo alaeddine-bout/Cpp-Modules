@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: about <about@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 23:12:14 by about             #+#    #+#             */
-/*   Updated: 2023/10/29 15:48:08 by about            ###   ########.fr       */
+/*   Created: 2023/11/08 19:17:51 by about             #+#    #+#             */
+/*   Updated: 2023/11/08 19:27:05 by about            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Harl.hpp"
 
-#include<iostream>
-
-class Contact
+void    Harl::complain(std::string level)
 {
-    private :
-        std::string first_name;
-        std::string last_name;
-        std::string nickname;
-        std::string phone_number;
-        std::string darkest_secret;
-    public :
-        void SetName(std::string , std::string);
-        std::string GetName(int);
-        void   displayContact(Contact& contact);
-};
-
-void    Contact::SetName();
+    void (Harl::*ptr[])(void) = {&Harl::debug,&Harl::info,&Harl::warning,&Harl::error};
+    std::string placeholder[] = {"DEBUG","INFO","WARNING","ERROR"};
+    for(int i = 0; i < 4; i++)
+    {
+        if(level == placeholder[i])
+        {
+            (this->*ptr[i])();
+            break;
+        }
+    }
+}
