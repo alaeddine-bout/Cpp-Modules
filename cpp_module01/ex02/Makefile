@@ -6,13 +6,15 @@ RM		= rm -rf
 
 SRC		= main.cpp
 
-OBJS	= $(SRC:.cpp=.o)
+OBJS = $(SRC:.cpp=.o)
 
 all : $(NAME)
 
+%.o : %.cpp
+	c++ $(FLAGS) -c $< -o $@
+
 $(NAME) :	$(OBJS)
 			c++ $(FLAGS) $(OBJS) -o $(NAME)
-
 
 clean:
 	$(RM) $(OBJS)

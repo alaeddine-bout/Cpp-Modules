@@ -6,7 +6,7 @@
 /*   By: about <about@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:02:17 by about             #+#    #+#             */
-/*   Updated: 2023/11/08 18:55:33 by about            ###   ########.fr       */
+/*   Updated: 2023/11/08 21:41:17 by about            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ std::string replaceFile::_replaceEach(const std::string &input, const std::strin
 
 bool replaceFile::openInput()
 {
-    _Inputfile.open(_Filename);
+    _Inputfile.open(Filename_.c_str());
     return(_Inputfile.is_open());
 }
 
 bool replaceFile::createOutput()
 {
-    _NewFileName = _Filename + ".replace";
-    _Outputfile.open(_NewFileName);
+    _NewFileName = Filename_ + ".replace";
+    _Outputfile.open(_NewFileName.c_str());
     return(_Outputfile.is_open());
 }
 
@@ -43,7 +43,7 @@ void    replaceFile::_replaceThenSave()
 {
     if(!openInput())
     {
-        std::cerr << "Error : file not opened " << _Filename << std::endl;
+        std::cerr << "Error : file not opened " << Filename_ << std::endl;
         return ;
     }
     
