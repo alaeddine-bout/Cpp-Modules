@@ -6,7 +6,7 @@
 /*   By: about <about@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 18:29:53 by about             #+#    #+#             */
-/*   Updated: 2023/11/12 20:44:25 by about            ###   ########.fr       */
+/*   Updated: 2023/11/12 23:33:21 by about            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,15 @@ float Fixed::toFloat() const
 int Fixed::toInt() const
 {
     return fixed_point >> fractional_bits;
+}
+
+int Fixed::getRawBits() const {
+    return fixed_point;
+}
+
+void Fixed::setRawBits(int const raw)
+{
+	fixed_point = raw;
 }
 
 std::ostream& operator<<(std::ostream& cout, Fixed const &fixed_) {
