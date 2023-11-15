@@ -10,31 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ScavTrap.hpp"
+#include"FragTrap.hpp"
 #include "ClapTrap.hpp"
 
 int main() {
-    ScavTrap scav("scav");
+    FragTrap Frag("Frag");
 
     std::cout << "Initial Status:" << std::endl;
-    std::cout << "Name: " << scav.getName() << std::endl;
-    std::cout << "Hit Points: " << scav.gethitPoints() << std::endl;
-    std::cout << "Energy Points: " << scav.getenergyPoints() << std::endl;
-    std::cout << "Attack Damage: " << scav.getattackDamage() << std::endl << std::endl;
+    std::cout << "Name: " << Frag.getName() << std::endl;
+    std::cout << "Hit Points: " << Frag.gethitPoints() << std::endl;
+    std::cout << "Energy Points: " << Frag.getenergyPoints() << std::endl;
+    std::cout << "Attack Damage: " << Frag.getattackDamage() << std::endl << std::endl;
 
-    scav.attack("TARGET1");
+    Frag.attack("TARGET1");
 
-    scav.takeDamage(20);
+    Frag.takeDamage(20);
 
-    scav.beRepaired(10);
+    Frag.beRepaired(10);
 
     std::cout << "\nFinal Status:" << std::endl;
-    std::cout << "Name: " << scav.getName() << std::endl;
-    std::cout << "Hit Points: " << scav.gethitPoints() << std::endl;
-    std::cout << "Energy Points: " << scav.getenergyPoints() << std::endl;
-    std::cout << "Attack Damage: " << scav.getattackDamage() << std::endl;
-    // Test ScavTrap's special capacity
-    scav.guardGate();
+    std::cout << "Name: " << Frag.getName() << std::endl;
+    std::cout << "Hit Points: " << Frag.gethitPoints() << std::endl;
+    std::cout << "Energy Points: " << Frag.getenergyPoints() << std::endl;
+    std::cout << "Attack Damage: " << Frag.getattackDamage() << std::endl;
+    // Test FragTrap's special capacity
+    Frag.highFivesGuys();
 
     return 0;
 }

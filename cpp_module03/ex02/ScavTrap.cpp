@@ -31,16 +31,8 @@ ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy) {
 	*this = copy;
 }
 
-ScavTrap::~ScavTrap() {
-    std::cout << "ScavTrap destructor called for " << _name << std::endl; 
-}
 
-void    ScavTrap::guardGate() {
-    std::cout << "ScavTrap" << _name << "is now in Gatekeeper mode." << std::endl;
-}
-
-ScavTrap& ScavTrap::operator=(const ScavTrap &other)
-{
+ScavTrap& ScavTrap::operator=(const ScavTrap &other) {
 	std::cout << "ScavTrap Copy assignment operator called" << std::endl;
 	if (this != &other) {
         this->_name = other._name;
@@ -49,6 +41,14 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &other)
         this->attackDamage = other.attackDamage;
     }
 	return(*this);
+}
+
+ScavTrap::~ScavTrap() {
+    std::cout << "ScavTrap destructor called for " << _name << std::endl; 
+}
+
+void    ScavTrap::guardGate() {
+    std::cout << "ScavTrap" << _name << "is now in Gatekeeper mode." << std::endl;
 }
 
 void	ScavTrap::attack(const std::string& target) {

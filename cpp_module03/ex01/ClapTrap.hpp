@@ -13,7 +13,6 @@
 #pragma once
 
 #include<iostream>
-#include<ostream>
 
 class ClapTrap {
 	protected :
@@ -22,6 +21,7 @@ class ClapTrap {
 		unsigned int energyPoints;
 		unsigned int attackDamage;
 	public :
+		ClapTrap();
 		ClapTrap(const std::string &name);
 		ClapTrap(const ClapTrap &copy);
 		ClapTrap & operator = (const ClapTrap &other);

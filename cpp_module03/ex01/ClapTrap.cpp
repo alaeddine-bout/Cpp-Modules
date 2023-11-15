@@ -12,18 +12,22 @@
 
 #include"ClapTrap.hpp"
 
-ClapTrap::ClapTrap(const std::string &name) : _name(name), hitPoints(10), energyPoints(10), attackDamage(0) {
-	std::cout << "Default Constructor Called" << std::endl;
+ClapTrap::ClapTrap() : _name("clapTrap"), hitPoints(10), energyPoints(10), attackDamage(0){
+	std::cout << "clapTrap Default constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(const std::string &name) : _name(name), hitPoints(10), energyPoints(10), attackDamage(0) { 
+	std::cout << "clapTrap parameterized constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy) {
-	std::cout << "Copy Constructor called" << std::endl;
+	std::cout << "clapTrap Copy Constructor called" << std::endl;
 	*this = copy;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "clapTrap Copy assignment operator called" << std::endl;
 	if (this != &other) {
         this->_name = other._name;
         this->hitPoints = other.hitPoints;
@@ -34,11 +38,15 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "Distrcutor called" << std::endl;
+	std::cout << "clapTrap Distrcutor called" << std::endl;
 }
 
 
 void	ClapTrap::attack(const std::string& target) {
+	if(hitPoints == 0) {
+		std::cout << "ClapTrap: " << _name << " is dead already!" << std::endl;
+		return;
+	}
 	if(energyPoints > 0) {
 		std::cout << "ClapTrap: " << _name << " attacks " << target << " causing " << attackDamage << " points of damage!" << std::endl;
 		energyPoints--;
@@ -49,6 +57,11 @@ void	ClapTrap::attack(const std::string& target) {
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
+	
+	if(hitPoints == 0) {
+		std::cout << "ClapTrap: " << _name << " is dead already!" << std::endl;
+		return;
+	}
 	if(hitPoints > 0) {
 		std::cout << "ClapTrap: " << _name << " takes " << amount << " points of damage !" << std::endl;
 		if(amount > hitPoints)
