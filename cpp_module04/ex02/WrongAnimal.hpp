@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: about <about@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 16:56:21 by about             #+#    #+#             */
-/*   Updated: 2023/11/18 15:38:40 by about            ###   ########.fr       */
+/*   Created: 2023/11/18 18:33:01 by about             #+#    #+#             */
+/*   Updated: 2023/11/18 18:34:24 by about            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 #include<iostream>
 
-class Animal {
-    protected :
+class WrongAnimal {
+     protected :
         std::string type;
     public :
-        Animal();
-        Animal(std::string newType);
-        Animal(const Animal &copy);
-        Animal &operator=(const Animal &other);
-        virtual ~Animal();
+        WrongAnimal();
+        WrongAnimal(std::string newType);
+        WrongAnimal(WrongAnimal &copy);
+        WrongAnimal &operator=(const WrongAnimal &other);
+        virtual ~WrongAnimal();
         std::string getType() const;
         virtual void makeSound()const;
 };

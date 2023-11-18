@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: about <about@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 16:56:21 by about             #+#    #+#             */
-/*   Updated: 2023/11/18 15:38:40 by about            ###   ########.fr       */
+/*   Created: 2023/11/18 17:26:27 by about             #+#    #+#             */
+/*   Updated: 2023/11/18 16:03:27 by about            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include"WrongAnimal.hpp"
+#include"WrongCat.hpp"
+#include"Animal.hpp"
+#include"Dog.hpp"
+#include"Cat.hpp"
 
-#include<iostream>
-
-class Animal {
-    protected :
-        std::string type;
-    public :
-        Animal();
-        Animal(std::string newType);
-        Animal(const Animal &copy);
-        Animal &operator=(const Animal &other);
-        virtual ~Animal();
-        std::string getType() const;
-        virtual void makeSound()const;
-};
+int main()
+{
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	delete i;
+	delete j;
+	return 0;
+}
